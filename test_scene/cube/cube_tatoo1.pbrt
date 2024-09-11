@@ -2,7 +2,7 @@ LookAt 0 0 3.6   0 0 0    0 1 0
 Camera "perspective" "float fov" [40]
 Film "image"  
 "integer xresolution" [128] "integer yresolution" [128]
-    "string filename" "/data/wq/pbrt/scenes/cube/results/cube_tatoo1_test.exr"
+    "string filename" "test_scene/cube/results/cube_tatoo1_test.exr"
     "float cropwindow" [0 1 0 1]
 
 
@@ -16,8 +16,8 @@ AttributeBegin
 LightSource "infinite"  "rgb L" [1 1 1]
 AttributeEnd
 
-Texture "sig_outer" "spectrum" "imagemap" "string filename" "/data/wq/pbrt/scenes/cube/textures/6_epidermis.exr"
-Texture "sig_inner" "spectrum" "imagemap" "string filename" "/data/wq/pbrt/scenes/cube/textures/6_dermis_tattoo1.exr"
+Texture "sig_outer" "spectrum" "imagemap" "string filename" "test_scene/cube/textures/6_epidermis.exr"
+Texture "sig_inner" "spectrum" "imagemap" "string filename" "test_scene/cube/textures/6_dermis_tattoo1.exr"
 
 AttributeBegin
 #

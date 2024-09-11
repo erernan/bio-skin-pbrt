@@ -2,7 +2,7 @@ LookAt 0 0 3.6   0 0 0    0 1 0
 Camera "perspective" "float fov" [40]
 Film "image"  
 "integer xresolution" [512] "integer yresolution" [512]
-    "string filename" "/nas/wq/rendering/pbrt/scenes/cube/results/cube_tc_test.exr"
+    "string filename" "test_scene/cube/results/cube_tc_test.exr"
     "float cropwindow" [0 1 0 1]
 
 
@@ -16,8 +16,8 @@ AttributeBegin
 LightSource "infinite"  "rgb L" [1 1 1]
 AttributeEnd
 
-Texture "sig_outer" "spectrum" "imagemap" "string filename" "/nas/wq/rendering/pbrt/scenes/cube/textures/epidermis.exr"
-Texture "sig_inner" "spectrum" "imagemap" "string filename" "/nas/wq/rendering/pbrt/scenes/cube/textures/dermis.exr"
+Texture "sig_outer" "spectrum" "imagemap" "string filename" "test_scene/cube/textures/epidermis.exr"
+Texture "sig_inner" "spectrum" "imagemap" "string filename" "test_scene/cube/textures/dermis.exr"
 
 AttributeBegin
 #
