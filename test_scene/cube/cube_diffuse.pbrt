@@ -1,0 +1,27 @@
+
+LookAt 0 0 3.6   0 0 0    0 1 0
+Camera "perspective" "float fov" [40]
+Film "image"  
+"integer xresolution" [512] "integer yresolution" [512]
+    "string filename" "/home/wq/pbrt/scenes/cube/results/cube_diffuse.exr"
+    "float cropwindow" [0 1 0 1]
+
+
+Sampler "02sequence" "integer pixelsamples" [128]
+
+Integrator "path" "integer maxdepth" [64]
+
+WorldBegin
+
+AttributeBegin
+#LightSource "infinite" "string mapname" "C:\\Users\\WANGQI\\Desktop\\pbrt-v3\\build\\scenes\\lut\\geometry\\turning_area_2k_nozero.exr"
+LightSource "infinite"  "rgb L" [1 1 1]
+AttributeEnd
+
+AttributeBegin
+Material "matte"
+Rotate 180 0 0 1
+Shape "plymesh" "string filename" "geometry/cube.ply"
+AttributeEnd
+
+WorldEnd

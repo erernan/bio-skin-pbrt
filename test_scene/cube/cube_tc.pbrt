@@ -1,0 +1,40 @@
+LookAt 0 0 3.6   0 0 0    0 1 0
+Camera "perspective" "float fov" [40]
+Film "image"  
+"integer xresolution" [512] "integer yresolution" [512]
+    "string filename" "/nas/wq/rendering/pbrt/scenes/cube/results/cube_tc_test.exr"
+    "float cropwindow" [0 1 0 1]
+
+
+Sampler "02sequence" "integer pixelsamples" [64]
+
+Integrator "voltc" "integer maxdepth" [64]
+
+WorldBegin
+
+AttributeBegin
+LightSource "infinite"  "rgb L" [1 1 1]
+AttributeEnd
+
+Texture "sig_outer" "spectrum" "imagemap" "string filename" "/nas/wq/rendering/pbrt/scenes/cube/textures/epidermis.exr"
+Texture "sig_inner" "spectrum" "imagemap" "string filename" "/nas/wq/rendering/pbrt/scenes/cube/textures/dermis.exr"
+
+AttributeBegin
+#
+MakeNamedMedium "outer_skin" "string type" "tcmedium" "rgb sigma_s" [4.778 6.452 9.21]  "float scale" [100] "texture sig_a" "sig_outer" "integer flag" [1] "rgb maxT" [19 34 58]
+MediumInterface "outer_skin" ""
+Material ""
+Rotate 180 0 0 1
+Shape "plymesh" "string filename" "geometry/cube.ply"
+AttributeEnd
+
+AttributeBegin
+MakeNamedMedium "inner_skin" "string type" "tcmedium" "rgb sigma_s" [2.389 3.226 4.605] "float scale" [100] "texture sig_a" "sig_inner" "integer flag" [2] "rgb maxT" [3.0 25 41]
+MediumInterface "inner_skin" "outer_skin"
+Material "" 
+Rotate 180 0 0 1
+Shape "plymesh" "string filename" "geometry/inner_cube.ply"
+AttributeEnd
+
+
+WorldEnd
