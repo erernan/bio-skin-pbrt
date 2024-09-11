@@ -1,0 +1,11 @@
+*~
+src/build
+src/bin
+src/objs
+src/ext/glog
+src/ext/openexr
+src/ext/ptex
+src/ext/zlib
+scenes
+.sconsign.dblite
+build
